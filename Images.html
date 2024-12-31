@@ -16,7 +16,7 @@
         }
         #image-container {
             display: grid; /* Utilisation de la grille pour une meilleure disposition */
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Crée des colonnes réactives */
+            grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
             gap: 10px; /* Espacement entre les images */
             width: 100vw; /* Prend toute la largeur de la fenêtre */
             height: 100vh; /* Prend toute la hauteur de la fenêtre */
@@ -27,10 +27,7 @@
             width: 100%; /* L'image prendra toute la largeur de sa cellule */
             height: auto; /* Conserve le ratio d'aspect */
             object-fit: cover; /* Couvre tout l'espace de l'image */
-            transition: transform 0.3s ease; /* Ajoute une transition douce pour le zoom */
-        }
-        .image:hover {
-            transform: scale(1.05); /* Zoom léger au survol */
+            border-radius: 5px; /* Arrondir légèrement les bords des images */
         }
     </style>
 </head>
