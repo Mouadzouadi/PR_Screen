@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Refresh</title>
+</head>
+<body>
+    <div id="image-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L01.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L04.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L05.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L07.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L10B.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L11B.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L12.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L13.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L14.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L15.png" style="width: 200px; height: auto; margin: 10px;">
+        <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L16.png" style="width: 200px; height: auto; margin: 10px;">
+    </div>
+    <script>
+        const imageUrls = [
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L01.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L04.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L05.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L07.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L10B.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L11B.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L12.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L13.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L14.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L15.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L16.png'
+        ];
+
+        function refreshImages() {
+            const images = document.querySelectorAll('.image');
+            images.forEach((img, index) => {
+                img.src = imageUrls[index] + '?t=' + new Date().getTime(); // Force le rafraîchissement
+            });
+        }
+
+        // Affiche les images initiales
+        refreshImages();
+
+        // Rafraîchit les images toutes les 5 minutes (300000 millisecondes)
+        setInterval(refreshImages, 300000); // 5 minutes
+    </script>
+</body>
+</html>
