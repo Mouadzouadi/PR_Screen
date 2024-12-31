@@ -1,4 +1,4 @@
-v<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,13 +22,12 @@ v<!DOCTYPE html>
             height: 100vh; /* Prend toute la hauteur de la fenêtre */
             padding: 10px; /* Ajoute un peu de marge intérieure */
             box-sizing: border-box; /* Inclut le padding dans la largeur totale */
-            align-items: center; /* Centre verticalement les images dans chaque cellule */
+            justify-items: center; /* Centre les images dans chaque cellule */
         }
         .image {
             width: 100%; /* L'image prendra toute la largeur de sa cellule */
             height: auto; /* Conserve le ratio d'aspect */
-            max-height: 100%; /* Limite la hauteur de l'image à celle de son conteneur */
-            object-fit: contain; /* Conserve le ratio d'aspect sans recadrage */
+            object-fit: contain; /* Couvre tout l'espace de l'image sans crop */
             border-radius: 5px; /* Arrondir légèrement les bords des images */
         }
     </style>
