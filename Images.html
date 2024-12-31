@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,8 +26,9 @@
         }
         .image {
             width: 100%; /* L'image prendra toute la largeur de sa cellule */
-            height: 100%; /* L'image prendra toute la hauteur de sa cellule */
-            object-fit: cover; /* Couvre tout l'espace de l'image */
+            height: auto; /* Conserve le ratio d'aspect */
+            max-height: 100%; /* Limite la hauteur de l'image à celle de son conteneur */
+            object-fit: contain; /* Conserve le ratio d'aspect sans recadrage */
             border-radius: 5px; /* Arrondir légèrement les bords des images */
         }
     </style>
