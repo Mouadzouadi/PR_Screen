@@ -23,8 +23,11 @@
             height: 100vh; /* Prend toute la hauteur de la fenêtre */
         }
         .image {
-            width: 33.33%; /* Ajustez la largeur pour 3 images par ligne */
+            flex: 1 1 30%; /* Chaque image prendra environ 30% de la largeur */
+            max-width: 200px; /* Limite la largeur max de chaque image */
             height: auto; /* Conserve le ratio d'aspect */
+            object-fit: cover; /* Couvre tout l'espace de l'image */
+            margin: 5px; /* Un peu d'espacement entre les images */
         }
     </style>
 </head>
