@@ -15,19 +15,22 @@
             overflow: hidden; /* Empêche le défilement */
         }
         #image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+            display: grid; /* Utilisation de la grille pour une meilleure disposition */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Crée des colonnes réactives */
+            gap: 10px; /* Espacement entre les images */
             width: 100vw; /* Prend toute la largeur de la fenêtre */
             height: 100vh; /* Prend toute la hauteur de la fenêtre */
+            padding: 10px; /* Ajoute un peu de marge intérieure */
+            box-sizing: border-box; /* Inclut le padding dans la largeur totale */
         }
         .image {
-            flex: 1 1 30%; /* Chaque image prendra environ 30% de la largeur */
-            max-width: 200px; /* Limite la largeur max de chaque image */
+            width: 100%; /* L'image prendra toute la largeur de sa cellule */
             height: auto; /* Conserve le ratio d'aspect */
             object-fit: cover; /* Couvre tout l'espace de l'image */
-            margin: 5px; /* Un peu d'espacement entre les images */
+            transition: transform 0.3s ease; /* Ajoute une transition douce pour le zoom */
+        }
+        .image:hover {
+            transform: scale(1.05); /* Zoom léger au survol */
         }
     </style>
 </head>
