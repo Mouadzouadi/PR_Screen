@@ -16,18 +16,19 @@
         }
         #image-container {
             display: grid; /* Utilisation de la grille pour une meilleure disposition */
-            grid-template-columns: repeat(auto-fill, minmax(25%, 1fr)); /* Quatre colonnes avec un minimum de 25% de la largeur */
-            gap: 1%; /* Espacement entre les images */
+            grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
+            gap: 10px; /* Espacement entre les images */
             width: 100vw; /* Prend toute la largeur de la fenêtre */
             height: 100vh; /* Prend toute la hauteur de la fenêtre */
-            padding: 2%; /* Ajoute un peu de marge intérieure */
+            padding: 10px; /* Ajoute un peu de marge intérieure */
             box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+            justify-items: center; /* Centre les images dans chaque cellule */
         }
         .image {
             width: 100%; /* L'image prendra toute la largeur de sa cellule */
             height: auto; /* Conserve le ratio d'aspect */
             object-fit: cover; /* Couvre tout l'espace de l'image */
-            border-radius: 5%; /* Arrondir légèrement les bords des images */
+            border-radius: 5px; /* Arrondir légèrement les bords des images */
         }
     </style>
 </head>
