@@ -22,13 +22,17 @@
             height: 100vh; /* Prend toute la hauteur de la fenêtre */
             padding: 10px; /* Ajoute un peu de marge intérieure */
             box-sizing: border-box; /* Inclut le padding dans la largeur totale */
-            justify-items: center; /* Centre les images dans chaque cellule */
+            align-items: center; /* Centre verticalement les images dans chaque cellule */
         }
         .image {
             width: 100%; /* L'image prendra toute la largeur de sa cellule */
             height: auto; /* Conserve le ratio d'aspect */
             object-fit: contain; /* Couvre tout l'espace de l'image sans crop */
             border-radius: 5px; /* Arrondir légèrement les bords des images */
+        }
+        /* Pour s'assurer que la dernière ligne est centrée */
+        #image-container > img:nth-last-child(-n+4) {
+            justify-self: center; /* Centre les images sur la dernière ligne si moins de 4 */
         }
     </style>
 </head>
