@@ -19,7 +19,7 @@
             grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
             gap: 10px; /* Espacement entre les images */
             width: 100vw; /* Prend toute la largeur de la fenêtre */
-            height: 100vh; /* Prend toute la hauteur de la fenêtre */
+            height: auto; /* Ajuste la hauteur selon le contenu */
             padding: 10px; /* Ajoute un peu de marge intérieure */
             box-sizing: border-box; /* Inclut le padding dans la largeur totale */
             align-items: center; /* Centre verticalement les images dans chaque cellule */
@@ -30,9 +30,15 @@
             object-fit: contain; /* Couvre tout l'espace de l'image sans crop */
             border-radius: 5px; /* Arrondir légèrement les bords des images */
         }
-        /* Pour s'assurer que la dernière ligne est centrée */
-        #image-container > img:nth-last-child(-n+4) {
-            justify-self: center; /* Centre les images sur la dernière ligne si moins de 4 */
+        .cropped-image {
+            grid-column: span 4; /* Prend toute la largeur de la grille */
+            text-align: center; /* Centre le texte */
+            position: relative; /* Nécessaire pour le positionnement de l'image */
+            overflow: hidden; /* Masque la partie débordante */
+        }
+        .cropped-image img {
+            width: 100%; /* Laisse l'image remplir le conteneur */
+            height: auto; /* Conserve le ratio d'aspect */
         }
     </style>
 </head>
@@ -49,6 +55,11 @@
         <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L14.png">
         <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L15.png">
         <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L16.png">
+                
+        <div class="cropped-image">
+            <h1>PR Tracking Usine</h1>
+            <img src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/Screenshot_Moyenne_PR.png">
+        </div>
     </div>
 
     <script>
@@ -63,7 +74,8 @@
             'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L13.png',
             'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L14.png',
             'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L15.png',
-            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L16.png'
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L16.png',
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/Screenshot_Moyenne_PR.png'
         ];
 
         function refreshImages() {
