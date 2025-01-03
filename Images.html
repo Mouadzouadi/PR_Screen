@@ -13,36 +13,23 @@
             justify-content: center;
             align-items: center;
             overflow: hidden; /* Empêche le défilement */
-            font-family: Arial, Helvetica, sans-serif;
         }
         #image-container {
             display: grid; /* Utilisation de la grille pour une meilleure disposition */
             grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
             gap: 10px; /* Espacement entre les images */
             width: 100vw; /* Prend toute la largeur de la fenêtre */
-            height: auto; /* Ajuste la hauteur selon le contenu */
+            height: 100vh; /* Prend toute la hauteur de la fenêtre */
             padding: 10px; /* Ajoute un peu de marge intérieure */
             box-sizing: border-box; /* Inclut le padding dans la largeur totale */
-            align-items: start; /* Aligne le contenu en haut */
+            align-items: center; /* Centre verticalement les images dans chaque cellule */
         }
         .image {
             width: 100%; /* L'image prendra toute la largeur de sa cellule */
             height: auto; /* Conserve le ratio d'aspect */
-            object-fit: contain; /* Couvre tout l'espace de l'image sans crop */
+            max-height: 100%; /* Limite la hauteur de l'image à celle de sa cellule */
+            object-fit: contain; /* Conserve le ratio d'aspect sans crop */
             border-radius: 5px; /* Arrondir légèrement les bords des images */
-        }
-        .cropped-image {
-            text-align: center; /* Centre le texte */
-            position: relative; /* Nécessaire pour le positionnement de l'image */
-            overflow: hidden; /* Masque la partie débordante */
-            border-radius: 5px; /* Arrondir légèrement les bords */
-            height: 30%;
-        }
-        .cropped-image img {
-            width: auto; /* Laisse l'image remplir le conteneur */
-            height: 100%; /* Remplit la hauteur du conteneur */
-            object-fit: cover; /* Couvre tout l'espace du conteneur sans déformation */
-            max-width: none; /* Désactive la largeur max pour éviter de réduire l'image */
         }
     </style>
 </head>
@@ -59,11 +46,6 @@
         <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L14.png">
         <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L15.png">
         <img class="image" src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L16.png">
-
-        <div class="cropped-image">
-            <h1>PR Tracking Usine</h1>
-            <img src="https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/Screenshot_Moyenne_PR.png">
-        </div>
     </div>
 
     <script>
@@ -78,8 +60,7 @@
             'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L13.png',
             'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L14.png',
             'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L15.png',
-            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L16.png',
-            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/Screenshot_Moyenne_PR.png'
+            'https://pgone.sharepoint.com/sites/BLOIS-Digitization/Pr_Tracking_Screen/L16.png'
         ];
 
         function refreshImages() {
